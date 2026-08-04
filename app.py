@@ -14,6 +14,7 @@ if question:=st.chat_input("Ask a question about your documents..."):
         st.markdown(question)
     with st.chat_message("assistant"):
         with st.spinner("Retrieving and Generating..."):
-            answer=answer_question(question)
+            answer,sources=answer_question(question)
         st.markdown(answer)
+        st.caption(f"📎 Sources:{', '.join(sources)}")
         st.session_state.messages.append({"role":"assistant","content":answer})

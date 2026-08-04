@@ -31,7 +31,7 @@ Answer:"""
     answer = response.choices[0].message.content
     print(f"\nAnswer: {answer}")
     print(f"\nSources: {set(sources)}")
-    return answer
+    return answer,set(sources)
 
 if __name__ == "__main__":
     answer_question("What are encoder and decoder stacks?")
