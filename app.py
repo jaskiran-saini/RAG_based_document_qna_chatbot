@@ -18,3 +18,4 @@ if question:=st.chat_input("Ask a question about your documents..."):
         st.markdown(answer)
         st.caption(f"📎 Sources:{', '.join(sources)}")
         st.session_state.messages.append({"role":"assistant","content":answer})
+        
