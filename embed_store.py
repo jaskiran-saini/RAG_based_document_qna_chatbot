@@ -2,7 +2,10 @@ import chromadb
 from sentence_transformers import SentenceTransformer
 from ingest import load_pdfs
 from chunk import chunk_documents
+import shutil,os 
 def build_vector_store():
+    if os.path.exists("./chroma_db"):
+        shutil.rmtree("./chroma_db")
     docs=load_pdfs()
     chunks=chunk_documents(docs)
     print("Loading embedding model...")
