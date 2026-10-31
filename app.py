@@ -1,4 +1,11 @@
 import streamlit as st
+import os 
+from embed_store import build_vector_store 
+@st.cache_resource 
+def ensure_vector_store():
+    if not os.path.exists("./chroma_db"):
+        build_vector_store()
+ensure_vector_store()
 from generate import answer_question
 st.set_page_config(page_title="Document Q&A Chatbot",page_icon="📄")
 st.title("📄 Document Q&A Chatbot")
