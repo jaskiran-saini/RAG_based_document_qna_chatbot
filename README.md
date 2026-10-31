@@ -9,7 +9,7 @@ A Retrieval-Augmented Generation chatbot that answers questions grounded in a se
 3. **Embedding**-each chunk is converted to a 384-dim vector using 'sentence-transformers' ('all-MinLM-L6-v2')
 4. **Storage**-vectors are stored in a local persistent vector database ('ChromaDB')
 5. **Retrieval**-a user's question is embedded and matched against stored chunks via cosine similarity (top-k)
-6. **Generation**-retrieved chunks are passed as context to an LLM (''llama-3.1-8b-instatnt' via Groq), which answers *only* from that context
+6. **Generation**-retrieved chunks are passed as context to an LLM (gpt-oss-20b), which answers *only* from that context
 7. **Citation**-the source document for each answer is tracked and displayed in the UI
 
 ## Tech stack
@@ -20,7 +20,7 @@ A Retrieval-Augmented Generation chatbot that answers questions grounded in a se
 | Chunking | LangChain text splitters |
 | Embeddings | sentence-transformers (all-MiniLM-L6-v2) |
 | Vector store | ChromaDB |
-| LLM | Groq API (Llama 3.1 8B) |
+| LLM | Groq API (gpt-oss-20b) |
 | UI | Streamlit |
 
 ## Dataset
